@@ -126,16 +126,16 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 9002,
+        port: 9004,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: '0.0.0.0',
+        hostname: 'localhost',
         livereload: 35732
       },
       proxies: [
         {
-          context: '/shuwo/project/Api',
+          context: '/shuwo/project/index.php/Api',
           host: 'localhost',
-          port: 8888,
+          port: 8080,
           changeOrigin: true
         }
       ],

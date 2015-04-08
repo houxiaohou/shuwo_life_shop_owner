@@ -26,7 +26,7 @@ angular.module('shuwoShopApp')
         for (var i in $scope.order.productdetail) {
           var p = $scope.order.productdetail[i];
           if (p.attribute == '1') {
-            if (p.weight === undefined || p.weight === '' || p.weight === 0) {
+            if (p.weight === undefined || p.weight === '' || p.weight < 0) {
               alert('先输入准确的重量');
               return;
             }

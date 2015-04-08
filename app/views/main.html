@@ -14,10 +14,11 @@
     <ul class="list-group" infinite-scroll="loadMore()" infinite-scroll-disabled="loading" infinite-scroll-distance="2" ng-show="orders.length>0" infinite-scroll-immediate-check="1==2">
       <li class="list-group-item order-list" ng-repeat="o in orders" ng-class="{'waiting': o.orderstatus=='0', 'done': o.orderstatus=='1', 'invalid': o.orderstatus=='2'}">
         <div class="info">
-          <p>订单状态：<span class="text-20" ng-class="{'color-red': o.orderstatus=='0', 'color-green': o.orderstatus=='1'}">{{o.orderstatus | orderStatus}}{{o.isfirst | firstOrder}}</span></p>
+          <p>订单状态：<span class="text-20" ng-class="{'color-red': o.orderstatus=='0', 'color-green': o.orderstatus=='1'}">{{o.orderstatus | orderStatus}}{{o | firstOrder}}</span></p>
           <p>订单编号：{{o.orderid}}</p>
           <p>订单时间：{{o.createdtime}}</p>
           <p class="divider-green" ng-if="o.orderstatus!='2'"></p>
+          <p>姓名：{{o.username}}</p>
           <p>手机：<a ng-href="tel:{{o.phone}}" class="tel">{{o.phone}}（点击拨打）</a></p>
           <p>地址：{{o.address}}</p>
           <p>配送时间：{{o.dltime}}</p>
@@ -34,18 +35,32 @@
               <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="p.attribute=='3'">{{p.quantity}}{{p.unit}}</p>
             </div>
             <div class="col-xs-4">
-              <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="p.attribute=='1'&&(o.orderstatus=='0'||o.orderstatus=='2')">约￥{{p.realprice}}</p>
+              <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="p.attribute=='1'&&(o.orderstatus=='0'||o.orderstatus=='2')">约￥{{p.realprice}}
+              </p>
               <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="p.attribute=='1'&&o.orderstatus=='1'">￥{{p.realprice}}</p>
               <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="p.attribute=='2'||p.attribute=='3'">￥{{p.realprice}}</p>
-            </div>fi
+            </div>
           </li>
           <p class="divider-grey"></p>
           <div class="row text-center">
             <div class="col-xs-4">总价</div>
             <div class="col-xs-4"></div>
             <div class="col-xs-4">
+              <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="o.orderstatus=='0'||o.orderstatus=='2'">约￥{{o.beforeprice}}</p>
+              <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="o.orderstatus=='1'">￥{{o.beforeprice}}</p>
+            </div>
+            <div ng-show="o.discount>0 && o.shopid ==15">
+            <div class="col-xs-4">优惠</div>
+            <div class="col-xs-4"></div>
+            <div class="col-xs-4">
+              <p ng-class="{'color-red': o.orderstatus!='2'}">￥{{o.discount}}</span></p>
+            </div>
+            <div class="col-xs-4">实际总价</div>
+            <div class="col-xs-4"></div>
+            <div class="col-xs-4">
               <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="o.orderstatus=='0'||o.orderstatus=='2'">约￥{{o.price}}</p>
               <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="o.orderstatus=='1'">￥{{o.price}}</p>
+            </div>
             </div>
           </div>
           <p class="divider-grey"></p>
