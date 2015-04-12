@@ -301,3 +301,11 @@ table > thead > tr > th {
 .order-header {
   position: inherit !important;
 }
+.price
+{
+  font-weight: bold;
+}
+.dark-red
+{
+  color: #bd362f;
+}

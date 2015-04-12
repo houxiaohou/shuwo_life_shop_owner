@@ -49,17 +49,20 @@
               <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="o.orderstatus=='0'||o.orderstatus=='2'">约￥{{o.beforeprice}}</p>
               <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="o.orderstatus=='1'">￥{{o.beforeprice}}</p>
             </div>
-            <div ng-show="o.discount>0 && o.shopid ==15">
+            <div ng-show="o.discount>0" class="row text-center" >
             <div class="col-xs-4">优惠</div>
             <div class="col-xs-4"></div>
             <div class="col-xs-4">
               <p ng-class="{'color-red': o.orderstatus!='2'}">￥{{o.discount}}</span></p>
             </div>
-            <div class="col-xs-4">实际总价</div>
+            </div>
+            <p class="divider-grey" ng-show="o.discount>0"></p>
+            <div ng-show="o.discount>0" class="row text-center" >
+            <div class="col-xs-4 price" >实际总价</div>
             <div class="col-xs-4"></div>
             <div class="col-xs-4">
-              <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="o.orderstatus=='0'||o.orderstatus=='2'">约￥{{o.price}}</p>
-              <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="o.orderstatus=='1'">￥{{o.price}}</p>
+              <p ng-class="{'dark-red price': o.orderstatus!='2'}" ng-if="o.orderstatus=='0'||o.orderstatus=='2'" >约￥{{o.price}}</p>
+              <p ng-class="{'dark-red price': o.orderstatus!='2'}" ng-if="o.orderstatus=='1'" class="font-color">￥{{o.price}}</p>
             </div>
             </div>
           </div>
