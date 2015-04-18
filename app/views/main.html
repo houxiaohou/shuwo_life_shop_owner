@@ -2,10 +2,23 @@
   <div class="global-header order-nav text-center">
     <span class="title">订单列表</span>
   </div>
+
+  <div>
+    <form role="form"  name="searchorderform">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="输入订单号搜索" name="srch-term" ng-model="order.search" id="srch-term">
+        <div class="input-group-btn">
+          <button class="btn btn-danger" type="submit" ng-click="orderSearch()"><i class="glyphicon glyphicon-search"></i></button>
+        </div>
+      </div>
+    </form>
+  </div>
+
   <div class="order-select">
     <label>点击按订单状态筛选</label>
     <select class="form-control text-center" ng-model="orderStatus" ng-options="s as s.label for s in status"></select>
   </div>
+
   <p class="loading text-center" ng-show="loading">
     <i class="fa fa-spinner fa-spin"></i>
   </p>

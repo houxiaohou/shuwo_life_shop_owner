@@ -45,12 +45,31 @@ angular.module('shuwoShopApp')
           $scope.start += count;
         }).error(function () {
           $scope.loading = false;
-          //$scope.start += 5;
         });
       };
 
       $scope.loadMore();
     }
+
+    $scope.orderSearch =function()
+    {
+      if($scope.order.search !=undefined && $scope.order.search.valueOf().trim()!=='' ) {
+        order.searchOrder($scope.order.search).success(function(data){
+          $scope.orders = data;
+        });
+      }
+      else
+      {
+        alert('请输入订单号');
+      }
+
+    }
+    $scope.$watch('order.search',function(){
+      if($scope.order.search == undefined || $scope.order.search == '')
+      {
+        loadOrders();
+      }
+    });
 
     $scope.$watch('orderStatus', function (newVal, oldVal) {
       if (newVal !== oldVal) {

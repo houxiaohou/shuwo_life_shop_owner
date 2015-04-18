@@ -27,6 +27,9 @@ angular.module('shuwoShopApp')
       },
       cancelOrder: function (id, reason) {
         return $http.post(constants.API.orderCancel, {id: id, ordernotes: reason});
+      },
+      searchOrder: function(data) {
+        return $http.post(constants.API.searchOrder,{search:data});
       }
     }
   }]);

@@ -20,7 +20,8 @@ angular.module('shuwoShopApp')
         allProducts: prefix + '/shop/allproducts',
         product: prefix + '/product',
         weight: prefix + '/weight',
-        orderCancel: prefix + '/ordercancel'
+        orderCancel: prefix + '/ordercancel',
+        searchOrder: prefix + '/searchorderbyshop'
       }
     }
   }]);
