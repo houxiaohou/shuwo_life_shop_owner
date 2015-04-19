@@ -196,6 +196,10 @@ p.divider-green {
   background: #FFEEE2;
 }
 
+.order .order-list.pickup {
+  background: #CFE4F1;
+}
+
 .order .order-list.invalid {
   color: #888888 !important;
 }
