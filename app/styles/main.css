@@ -79,7 +79,6 @@ p {
 
 .form-control {
   border-radius: 2px;
-  -webkit-appearance: none;
 }
 
 .form-control:focus {
@@ -193,11 +192,11 @@ p.divider-green {
 }
 
 .order .order-list.waiting {
-  background: #FFEEE2;
+  background: #FFBDBD;
 }
 
 .order .order-list.pickup {
-  background: #CFE4F1;
+  background: #E9FBFF;
 }
 
 .order .order-list.invalid {

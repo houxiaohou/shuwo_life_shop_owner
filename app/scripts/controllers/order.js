@@ -14,11 +14,30 @@ angular.module('shuwoShopApp')
 
       $scope.loading = true;
 
+      $scope.order = undefined;
+      $scope.ispickup = 0;
+
       var orderId = $stateParams.id;
 
       order.getOrderById(orderId).success(function (data) {
         $scope.order = data;
         $scope.loading = false;
+      });
+
+      $scope.$watch('order', function (newVal, oldVal) {
+        if (newVal !== undefined) {
+          var distance = parseInt(newVal.distance);
+          if ((newVal.ispickup == '1' || distance < 50) && distance != 0) {
+            $scope.ispickup = 1;
+            for (var i in $scope.order.productdetail) {
+              var product = $scope.order.productdetail[i];
+              if (product.attribute == '1') {
+                product.weight = product.quantity * product.unitweight;
+              }
+            }
+
+          }
+        }
       });
 
       $scope.confirmWeight = function () {

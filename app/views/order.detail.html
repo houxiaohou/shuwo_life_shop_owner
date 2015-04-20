@@ -36,9 +36,12 @@
       </tbody>
     </table>
     <div class="padding">
-      <button class="btn btn-success btn-block" ng-click="confirmWeight()">确认产品重量</button>
+      <button ng-show="ispickup==0" class="btn btn-success btn-block" ng-click="confirmWeight()">确认产品重量并开始发货</button>
+      <button ng-show="ispickup==1" class="btn btn-success btn-block" ng-click="confirmWeight()">一键确认订单</button>
     </div>
     <div class="padding" style="margin-top: 10px">
+      <p ng-show="ispickup==1" class="color-red">* 此订单为到店自提订单，可以一键确认重量</p>
+      <p ng-show="ispickup==0" class="color-red">* 确认产品重量之后，默认您已开始发货，请及时配送</p>
       <p>* 确认产品重量后将计算最终价格，同时下单用户将收到微信通知</p>
     </div>
   </div>

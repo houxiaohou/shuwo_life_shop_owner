@@ -35,6 +35,9 @@ angular.module('shuwoShopApp')
       if (distance < 50 && distance != 0) {
         return '（' + order.distance + '米）';
       }
+      if (order.ispickup == '0') {
+        return '（外送订单）';
+      }
     };
   });
 
