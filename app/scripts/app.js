@@ -58,6 +58,11 @@ angular
           templateUrl: templateBase + 'views/main.html',
           controller: 'MainCtrl'
         })
+        .state('shuwoShop.out', {
+          url: '/out',
+          templateUrl: templateBase + 'views/main.html',
+          controller: 'OutCtrl'
+        })
         .state('shuwoShop.order', {
           abstract: true,
           url: '/order',

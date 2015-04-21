@@ -10,13 +10,9 @@
 angular.module('shuwoShopApp')
   .service('order', ['$http', 'constants', function order($http, constants) {
     return {
-      listOrders: function (start, count, status) {
+      listOrders: function (params) {
         return $http.get(constants.API.order, {
-          params: {
-            start: start,
-            count: count,
-            status: status
-          }
+          params: params
         });
       },
       getOrderById: function (id) {
@@ -28,8 +24,8 @@ angular.module('shuwoShopApp')
       cancelOrder: function (id, reason) {
         return $http.post(constants.API.orderCancel, {id: id, ordernotes: reason});
       },
-      searchOrder: function(data) {
-        return $http.post(constants.API.searchOrder,{search:data});
+      searchOrder: function (data) {
+        return $http.post(constants.API.searchOrder, {search: data});
       }
     }
   }]);

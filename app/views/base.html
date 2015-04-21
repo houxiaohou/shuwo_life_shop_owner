@@ -1,19 +1,25 @@
 <div ui-view></div>
 <div id="footer" class="footer container" ng-show="page.hasFooter();">
   <div class="row">
-    <div class="col-xs-4">
+    <div class="col-xs-3">
       <a ui-sref="shuwoShop.main" ng-class="{'active': page.getFooterNav() == 'order'}">
         <i class="fa fa-file-text-o fa-fw"></i>
-        <span>订单</span>
+        <span>全部订单</span>
       </a>
     </div>
-    <div class="col-xs-4">
+    <div class="col-xs-3">
+      <a ui-sref="shuwoShop.out" ng-class="{'active': page.getFooterNav() == 'out'}">
+        <i class="fa fa-bicycle fa-fw"></i>
+        <span>外送</span>
+      </a>
+    </div>
+    <div class="col-xs-3">
       <a ui-sref="shuwoShop.shop" ng-class="{'active': page.getFooterNav() == 'shop'}">
         <i class="fa fa-building fa-fw"></i>
         <span>店铺</span>
       </a>
     </div>
-    <div class="col-xs-4">
+    <div class="col-xs-3">
       <a ui-sref="shuwoShop.product.list" ng-class="{'active': page.getFooterNav() == 'product'}">
         <i class="fa fa-list fa-fw"></i>
         <span>产品</span>
