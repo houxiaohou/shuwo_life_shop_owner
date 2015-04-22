@@ -26,8 +26,6 @@ angular.module('shuwoShopApp')
 
     var count = 5;
 
-    loadOrders();
-
     function loadOrders() {
       $scope.loading = true;
       $scope.orders = [];
@@ -75,6 +73,7 @@ angular.module('shuwoShopApp')
     };
     $scope.$watch('search', function () {
       if ($scope.search == undefined || $scope.search == '') {
+        console.log('search...');
         loadOrders();
       }
     });
