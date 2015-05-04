@@ -13,6 +13,7 @@ angular.module('shuwoShopApp')
       page.hideFooter();
 
       $scope.loading = true;
+      $scope.submitting = false;
 
       $scope.order = undefined;
       $scope.ispickup = 0;
@@ -41,6 +42,7 @@ angular.module('shuwoShopApp')
       });
 
       $scope.confirmWeight = function () {
+        $scope.submitting = true;
         var data = [];
         for (var i in $scope.order.productdetail) {
           var p = $scope.order.productdetail[i];
