@@ -2,6 +2,6 @@
 
 angular.module('services.config', [])
   .constant('configuration', {
-    urlPrefix: '/Api',
-    templateBase: '/static/shop/'
+    urlPrefix: '/shuwo/project/index.php/Api',
+    templateBase: ''
   });

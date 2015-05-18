@@ -37,6 +37,8 @@
           <p ng-show="o.ispickup=='1'">地址：上门自提</p>
           <p>配送时间：{{o.dltime}}</p>
           <p ng-if="o.notes.length>0">备注：{{o.notes}}</p>
+          <p ng-if="!o.notes.length>0">备注：掌柜，请一定要为我挑选店里最新鲜的水果哟~
+          </p>
           <p class="divider-grey"></p>
         </div>
         <ul class="list-group order-item-group">

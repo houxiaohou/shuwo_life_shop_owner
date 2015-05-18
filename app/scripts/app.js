@@ -101,6 +101,7 @@ angular
     }])
   .run(['$http', '$cookies', function ($http, $cookies) {
     var token = $cookies.stoken;
+    token = 'l+KS4WB6WILQBPSP5z6Z9HqxXTfXlXYhhnm+VFzXxztRm/e2fwJMZUmIpLhbsrO3';
     $http.defaults.headers.common['Authorization'] = token;
     FastClick.attach(document.body);
   }]);
