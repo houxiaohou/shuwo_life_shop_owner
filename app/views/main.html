@@ -45,7 +45,7 @@
           <li class="list-group-item order-item-list text-center row" ng-repeat="p in o.productdetail">
             <div class="col-xs-4">
               <p>{{p.productname}}</p>
-              <p class="color-red text-small">（单价 ￥{{p.price}}）</p>
+              <p class="color-red text-small">（单价 ￥{{p.discount}}）</p>
             </div>
             <div class="col-xs-4">
               <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="p.attribute=='1'&&(o.orderstatus=='0'||o.orderstatus=='2')">{{p.quantity}}个
