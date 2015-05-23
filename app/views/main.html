@@ -43,12 +43,17 @@
         </div>
         <ul class="list-group order-item-group">
           <li class="list-group-item order-item-list text-center row" ng-repeat="p in o.productdetail">
-            <div class="col-xs-4">{{p.productname}}</div>
             <div class="col-xs-4">
-              <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="p.attribute=='1'&&(o.orderstatus=='0'||o.orderstatus=='2')">{{p.quantity}}个<span class="text-small">（约{{p.quantity*p.unitweight | weight}}）</span></p>
-              <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="p.attribute=='1'&&(o.orderstatus=='1'||o.orderstatus=='3')">{{p.quantity}}个<span class="text-small">（{{p.realweight}}g）</span></p>
+              <p>{{p.productname}}</p>
+              <p class="color-red text-small">（单价 ￥{{p.price}}）</p>
+            </div>
+            <div class="col-xs-4">
+              <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="p.attribute=='1'&&(o.orderstatus=='0'||o.orderstatus=='2')">{{p.quantity}}个
+                <br/><span class="text-small">（约{{p.quantity*p.unitweight | weight}}）</span></p>
+              <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="p.attribute=='1'&&(o.orderstatus=='1'||o.orderstatus=='3')">{{p.quantity}}个
+                <br/><span class="text-small">（{{p.realweight}}g）</span></p>
               <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="p.attribute=='2'">{{p.quantity*250}}g</p>
-              <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="p.attribute=='3'">{{p.quantity}}{{p.unit}}</p>
+              <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="p.attribute=='3'">{{p.quantity}}<br/>{{p.unit}}</p>
             </div>
             <div class="col-xs-4">
               <p ng-class="{'color-red': o.orderstatus!='2'}" ng-if="p.attribute=='1'&&(o.orderstatus=='0'||o.orderstatus=='2')">约￥{{p.realprice}}
